@@ -641,3 +641,449 @@
                 gap: 30px;
             }
         }
+
+/* ДОБАВЬТЕ ЭТО В КОНЕЦ ФАЙЛА styles.css ПОСЛЕ СУЩЕСТВУЮЩИХ МЕДИА-ЗАПРОСОВ */
+
+/* =========================================== */
+/* ТАБЛЕТЫ (ПЛАНШЕТЫ) - ОСНОВНЫЕ НАСТРОЙКИ */
+/* =========================================== */
+
+/* Планшеты в портретной ориентации (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 0 25px;
+    }
+    
+    .hero h1 {
+        font-size: 3.2rem;
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 1.6rem;
+        padding: 0 20px;
+    }
+    
+    /* Исправляем фотографию эксперта */
+    .expert-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .expert-image {
+        flex: none;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .expert-image img {
+        max-height: 400px;
+        object-fit: cover;
+        object-position: top;
+    }
+    
+    .expert-info {
+        padding: 0 15px;
+    }
+    
+    .expert-name {
+        font-size: 2rem;
+    }
+    
+    .expert-title {
+        font-size: 1.3rem;
+    }
+    
+    .expert-text {
+        font-size: 1.15rem;
+        line-height: 1.7;
+    }
+    
+    /* Направления */
+    .directions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .direction-card {
+        padding: 25px 20px;
+    }
+    
+    .direction-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    /* Прайс */
+    .price-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .price-category h3 {
+        font-size: 1.6rem;
+    }
+    
+    /* Футер */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    /* Уменьшаем отступы секций */
+    section {
+        padding: 70px 0;
+    }
+}
+
+/* Планшеты в альбомной ориентации (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+        padding: 0 30px;
+    }
+    
+    .hero h1 {
+        font-size: 3.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.7rem;
+    }
+    
+    /* Исправляем фотографию эксперта */
+    .expert-content {
+        gap: 40px;
+        align-items: flex-start;
+    }
+    
+    .expert-image {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+    
+    .expert-image img {
+        max-height: 450px;
+        object-fit: cover;
+        object-position: top;
+    }
+    
+    .expert-info {
+        flex: 0 0 55%;
+        padding-right: 10px;
+    }
+    
+    .expert-name {
+        font-size: 2.3rem;
+    }
+    
+    .expert-title {
+        font-size: 1.3rem;
+    }
+    
+    /* Направления */
+    .directions-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .direction-card {
+        padding: 25px;
+    }
+    
+    /* Прайс */
+    .price-container {
+        max-width: 850px;
+    }
+    
+    .price-items {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .price-category h3 {
+        font-size: 1.7rem;
+    }
+    
+    /* Логотип */
+    .logo {
+        margin-left: -50px;
+    }
+    
+    /* Навигация */
+    .nav-links li {
+        margin-left: 20px;
+    }
+    
+    .nav-links a {
+        font-size: 15px;
+    }
+    
+    /* Футер */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    .map-container {
+        height: 320px;
+    }
+}
+
+/* Большие планшеты (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .container {
+        max-width: 1100px;
+    }
+    
+    /* Фотография эксперта - ограничиваем максимальную ширину */
+    .expert-image {
+        max-width: 500px;
+    }
+    
+    .expert-image img {
+        max-height: 500px;
+        object-fit: cover;
+    }
+    
+    /* Улучшаем отступы */
+    .expert-content {
+        gap: 60px;
+    }
+    
+    /* Прайс - 4 колонки вместо 5 */
+    .price-items {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* =========================================== */
+/* СПЕЦИАЛЬНЫЕ ИСПРАВЛЕНИЯ ДЛЯ ФОТОГРАФИИ */
+/* =========================================== */
+
+/* Для всех планшетов - ограничиваем высоту фото */
+@media (max-width: 1024px) {
+    .expert-image {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .expert-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+        object-position: center 25%;
+    }
+}
+
+/* Для вертикальных планшетов - делаем фото меньше */
+@media (max-width: 768px) and (orientation: portrait) {
+    .expert-image {
+        max-width: 350px;
+    }
+    
+    .expert-image img {
+        max-height: 350px;
+    }
+}
+
+/* Для горизонтальных планшетов */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+    .expert-image img {
+        max-height: 380px;
+    }
+}
+
+/* =========================================== */
+/* МЕЛКИЕ ИСПРАВЛЕНИЯ ДЛЯ УЛУЧШЕНИЯ ВНЕШНЕГО ВИДА */
+/* =========================================== */
+
+/* Для всех планшетов улучшаем читаемость текста */
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    
+    .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+    
+    .section-title h2::after {
+        width: 70px;
+        height: 4px;
+        bottom: -12px;
+    }
+    
+    /* Улучшаем отступы в карточках направлений */
+    .direction-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+        min-height: 3.2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .direction-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* Улучшаем отображение прайса */
+    .price-item {
+        padding: 20px;
+    }
+    
+    .price-item-name {
+        font-size: 1.1rem;
+    }
+    
+    .price-item-cost {
+        font-size: 1.4rem;
+    }
+    
+    .price-item-details {
+        font-size: 0.9rem;
+    }
+    
+    .price-item-per {
+        font-size: 0.95rem;
+    }
+    
+    /* Улучшаем карту */
+    .map-container {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Улучшаем соц-иконки */
+    .social-links {
+        justify-content: flex-start;
+    }
+    
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Специальные настройки для iPad Pro 10.5" и подобных */
+@media (width: 834px) and (height: 1112px) {
+    /* iPad Pro 10.5" вертикально */
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .expert-image {
+        max-width: 380px;
+    }
+    
+    .directions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width: 1112px) and (height: 834px) {
+    /* iPad Pro 10.5" горизонтально */
+    .expert-content {
+        gap: 50px;
+    }
+    
+    .expert-image {
+        max-width: 420px;
+    }
+    
+    .expert-image img {
+        max-height: 420px;
+    }
+    
+    .directions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .direction-card:nth-child(5) {
+        grid-column: 2 / 4;
+    }
+}
+
+/* =========================================== */
+/* ОПТИМИЗАЦИЯ ДЛЯ ПЛАНШЕТОВ С ВЫСОКИМ DPI */
+/* =========================================== */
+
+@media (min-width: 481px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Для ретина-дисплеев улучшаем качество изображений */
+    .expert-image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    .logo img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* =========================================== */
+/* ПРОВЕРКА ОРИЕНТАЦИИ ПЛАНШЕТА */
+/* =========================================== */
+
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
+    /* Вертикальная ориентация */
+    .hero {
+        min-height: 80vh;
+    }
+    
+    .hero-content {
+        padding-top: 40px;
+    }
+    
+    .expert-content {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+    /* Горизонтальная ориентация */
+    .hero {
+        min-height: 85vh;
+    }
+    
+    .expert-content {
+        flex-direction: row;
+    }
+}
+
+/* =========================================== */
+/* ФИНАЛЬНЫЕ ОПТИМИЗАЦИИ */
+/* =========================================== */
+
+/* Улучшаем производительность анимаций на планшетах */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .direction-card:hover {
+        transform: translateY(-8px);
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .price-item:hover {
+        transform: translateX(3px);
+        transition: transform 0.25s ease;
+    }
+    
+    /* Отключаем сложные анимации на слабых планшетах */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
