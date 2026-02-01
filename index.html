@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детский центр развития "УМка"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <img src="photos/test_logo.jpg">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О эксперте</a></li>
+                <li><a href="#directions">Направления</a></li>
+                <li><a href="#price">Прайс</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- Hero section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1>УМ<span>ка</span></h1>
+            <p>Главное не гениальность, а ум и уверенность вашего ребенка</p>
+        </div>
+    </section>
+    
+    <!-- About expert -->
+    <section id="about" class="about-expert">
+        <div class="container">
+            <div class="section-title">
+                <h2>О эксперте</h2>
+            </div>
+            
+            <div class="expert-content">
+                <div class="expert-image">
+                    <img src="photos/expert-photo.jpg" alt="Эксперт детского центра">
+                </div>
+                
+                <div class="expert-info">
+                    <h3 class="expert-name">Ивашова Оксана</h3>
+                    <p class="expert-title">Репетитор и педагог с 30-летним опытом</p>
+                    <p class="expert-text">Я профессиональный педагог с высшим образованием и многолетним опытом работы с детьми разных возрастов. Моя специализация - индивидуальный подход к каждому ребенку, развитие его познавательных способностей и уверенности в себе.</p>
+                    <p class="expert-text">Расписание и дополнительную информацию можно узнать по контактам, указанным на сайте.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Directions -->
+    <section id="directions" class="directions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Направления</h2>
+            </div>
+            
+            <div class="directions-grid">
+                <div class="direction-card">
+                    <div class="direction-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Подготовка к школе</h3>
+                    <p>Комплексные занятия по развитию речи, логики, математических представлений, обучение чтению и письму для детей 5-7 лет.</p>
+                </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Занятия с дошкольниками</h3>
+                    <p>Развивающие игры и упражнения для детей 3-5 лет, направленные на развитие мелкой моторики, внимания, памяти и творческих способностей.</p>
+                </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Репетитор по всем предметам</h3>
+                    <p>Индивидуальные занятия для учеников 1-8 классов по математике, русскому языку, чтению, окружающему миру и другим предметам.</p>
+                </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Помощь в выполнении домашних заданий</h3>
+                    <p>Помощь ученикам начальной школы в выполнении домашних заданий, объяснение сложных тем и закрепление материала.</p>
+                </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Логопед</h3>
+                    <p>Коррекция звукопроизношения, развитие связной речи, обогащение словарного запаса для детей дошкольного и младшего школьного возраста.</p>
+                </div>
+            </div>
+            
+            <p class="directions-footer">Обучение проходит в группах и индивидуально</p>
+        </div>
+    </section>
+    
+    <!-- Price -->
+    <section id="price" class="price">
+        <div class="container price-container">
+            <div class="section-title">
+                <h2>Прайс</h2>
+            </div>
+            
+            <p class="price-note">Все цены указаны в белорусских рублях.</p>
+            
+            <!-- РАЗВИВАЮЩИЕ ЗАНЯТИЯ (группа) -->
+            <div class="price-category">
+                <h3>РАЗВИВАЮЩИЕ ЗАНЯТИЯ (группа)</h3>
+                <div class="price-items">
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">104,00</div>
+                        </div>
+                        <p class="price-item-details">Группа 4-6 человек, 45 минут</p>
+                        <p class="price-item-per">13,00 за занятие</p>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">128,00</div>
+                        </div>
+                        <p class="price-item-details">Группа 2-3 человека, 45 минут</p>
+                        <p class="price-item-per">16,00 за занятие</p>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 8 занятий</div>
+                            <div class="price-item-cost">104,00</div>
+                        </div>
+                        <p class="price-item-details">Группа 4-6 человек, 45 минут</p>
+                        <p class="price-item-per">13,00 за занятие</p>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 8 занятий</div>
+                            <div class="price-item-cost">128,00</div>
+                        </div>
+                        <p class="price-item-details">Группа 2-3 человека, 45 минут</p>
+                        <p class="price-item-per">16,00 за занятие</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- РАЗВИВАЮЩИЕ ЗАНЯТИЯ (индив.) -->
+            <div class="price-category">
+                <h3>РАЗВИВАЮЩИЕ ЗАНЯТИЯ (индивидуально)</h3>
+                <div class="price-items">
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">64,00</div>
+                        </div>
+                        <p class="price-item-details">30 минут</p>
+                        <p class="price-item-per">16,00 за занятие</p>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">92,00</div>
+                        </div>
+                        <p class="price-item-details">45 минут</p>
+                        <p class="price-item-per">23,00 за занятие</p>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">108,00</div>
+                        </div>
+                        <p class="price-item-details">60 минут</p>
+                        <p class="price-item-per">27,00 за занятие</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ПОДГОТОВКА К ШКОЛЕ -->
+            <div class="price-category">
+                <h3>ПОДГОТОВКА К ШКОЛЕ</h3>
+                <div class="price-items">
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">128,00</div>
+                        </div>
+                        <p class="price-item-details">90 минут</p>
+                        <p class="price-item-per">32,00 за занятие</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- РЕПЕТИТОР (индив.) -->
+            <div class="price-category">
+                <h3>РЕПЕТИТОР (индивидуально)</h3>
+                <div class="price-items">
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">72,00</div>
+                        </div>
+                        <p class="price-item-details">30 минут</p>
+                        <p class="price-item-per">18,00 за занятие</p>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">104,00</div>
+                        </div>
+                        <p class="price-item-details">45 минут</p>
+                        <p class="price-item-per">26,00 за занятие</p>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">116,00</div>
+                        </div>
+                        <p class="price-item-details">60 минут</p>
+                        <p class="price-item-per">29,00 за занятие</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- РЕПЕТИТОР (группа) -->
+            <div class="price-category">
+                <h3>РЕПЕТИТОР (группа 2-4 чел)</h3>
+                <div class="price-items">
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">80,00</div>
+                        </div>
+                        <p class="price-item-details">45 минут</p>
+                        <p class="price-item-per">20,00 за занятие</p>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">92,00</div>
+                        </div>
+                        <p class="price-item-details">60 минут</p>
+                        <p class="price-item-per">23,00 за занятие</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ЛОГОПЕД-ДЕФЕКТОЛОГ -->
+            <div class="price-category">
+                <h3>ЛОГОПЕД-ДЕФЕКТОЛОГ</h3>
+                <div class="price-items">
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Абонемент 4 занятия</div>
+                            <div class="price-item-cost">112,00</div>
+                        </div>
+                        <p class="price-item-details">30 минут</p>
+                        <p class="price-item-per">28,00 за занятие</p>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-item-header">
+                            <div class="price-item-name">Диагностика</div>
+                            <div class="price-item-cost">35,00</div>
+                        </div>
+                        <p class="price-item-details">Первичная консультация и оценка</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contacts/Footer -->
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>г. Брест, просп. Машерова, 59/1</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+375 29 774-98-88</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>umkabrest@gmail.com</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Местоположение</h3>
+                    <p>Остановка "Мопра",  50 метров за магазином "Перфект".</p>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4828.543382879826!2d23.707975133043618!3d52.08863666461987!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47210d202907d16f%3A0x32cc507773ff4723!2z0JTQtdGC0YHQutC40Lkg0YbQtdC90YLRgCDRgNCw0LfQstC40YLQuNGPINCj0JzQutCw!5e0!3m2!1sru!2sby!4v1769925194759!5m2!1sru!2sby" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
