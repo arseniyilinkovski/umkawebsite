@@ -102,7 +102,7 @@ header {
     height: 100%;
     /*background: url('https://images.unsplash.com/photo-1519682577862-22b62b24e493?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center;*/
     background: url('photos/bg.jpg') no-repeat center center;
-    background-size: cover;
+    background-size: contain;
     opacity: 0.22;
     z-index: -1;
 }
