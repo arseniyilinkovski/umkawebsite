@@ -67,7 +67,7 @@ toggleBtns.forEach(btn => {
     });
 });
 
-// GALLERY SLIDER
+// GALLERY SLIDER с поддержкой нескольких видео, звука и паузы
 const sliderWrapper = document.getElementById('sliderWrapper');
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.getElementById('prevSlide');
@@ -77,11 +77,42 @@ const dotsContainer = document.getElementById('sliderDots');
 if (sliderWrapper && slides.length > 0) {
     let currentIndex = 0;
     const totalSlides = slides.length;
-    let autoSlideInterval;
+    
+    // Функция для управления всеми видео (пауза/воспроизведение)
+    function manageVideos() {
+        slides.forEach((slide, index) => {
+            const video = slide.querySelector('.slide-video');
+            if (video) {
+                if (index === currentIndex) {
+                    // Активный слайд - воспроизводим видео
+                    video.play().catch(e => console.log('Автовоспроизведение заблокировано:', e));
+                    slide.classList.add('active-video');
+                    
+                    // Обновляем иконку play/pause (если видео играет - показываем паузу)
+                    const playPauseBtn = slide.querySelector('.video-play-pause-btn');
+                    if (playPauseBtn && !video.paused) {
+                        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    }
+                } else {
+                    // Неактивный слайд - ставим на паузу и сбрасываем
+                    video.pause();
+                    video.currentTime = 0;
+                    slide.classList.remove('active-video');
+                    
+                    // Обновляем иконку play/pause
+                    const playPauseBtn = slide.querySelector('.video-play-pause-btn');
+                    if (playPauseBtn) {
+                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                }
+            }
+        });
+    }
     
     function updateSlider() {
         sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
         updateDots();
+        manageVideos();
     }
     
     function updateDots() {
@@ -100,29 +131,15 @@ if (sliderWrapper && slides.length > 0) {
             dot.addEventListener('click', () => {
                 currentIndex = i;
                 updateSlider();
-                resetAutoSlide();
             });
             dotsContainer.appendChild(dot);
         }
-    }
-    
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlider();
-        }, 5000);
-    }
-    
-    function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
     }
     
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % totalSlides;
             updateSlider();
-            resetAutoSlide();
         });
     }
     
@@ -130,13 +147,88 @@ if (sliderWrapper && slides.length > 0) {
         prevBtn.addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
             updateSlider();
-            resetAutoSlide();
         });
     }
     
     createDots();
-    startAutoSlide();
+    updateSlider();
 }
+
+// УПРАВЛЕНИЕ ДЛЯ ВСЕХ ВИДЕО (звук + пауза/воспроизведение)
+document.querySelectorAll('.video-slide').forEach(videoSlide => {
+    const video = videoSlide.querySelector('.slide-video');
+    const playPauseBtn = videoSlide.querySelector('.video-play-pause-btn');
+    const soundBtn = videoSlide.querySelector('.video-sound-btn');
+    
+    if (!video) return;
+    
+    let isSoundEnabled = false;
+    
+    // Кнопка play/pause
+    if (playPauseBtn) {
+        playPauseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            if (video.paused) {
+                video.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+        
+        // Следим за окончанием видео (для loop)
+        video.addEventListener('ended', () => {
+            if (video.loop) {
+                video.play();
+            } else {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+    }
+    
+    // Кнопка звука
+    if (soundBtn) {
+        soundBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            if (isSoundEnabled) {
+                video.muted = true;
+                soundBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                isSoundEnabled = false;
+            } else {
+                video.muted = false;
+                soundBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                isSoundEnabled = true;
+                
+                if (video.paused) {
+                    video.play();
+                    if (playPauseBtn) playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }
+            }
+        });
+    }
+    
+    // При смене слайда сбрасываем звук для неактивных видео
+    const observer = new MutationObserver(() => {
+        const isActive = videoSlide.classList.contains('active-video');
+        if (!isActive) {
+            if (isSoundEnabled) {
+                video.muted = true;
+                if (soundBtn) soundBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                isSoundEnabled = false;
+            }
+        } else {
+            // Если видео стало активным и на паузе - показываем play
+            if (video.paused && playPauseBtn) {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+    });
+    
+    observer.observe(videoSlide, { attributes: true, attributeFilter: ['class'] });
+});
 
 // Animation on scroll
 const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
